@@ -1,0 +1,65 @@
+<div class="text-center">
+    <br><br>
+    <h2 *ngIf="firstQuestionNumber===300" class="font-weight-bold">Baden-Württemberg</h2>
+    <h2 *ngIf="firstQuestionNumber===310" class="font-weight-bold">Bayern</h2>
+    <h2 *ngIf="firstQuestionNumber===320" class="font-weight-bold">Berlin</h2>
+    <h2 *ngIf="firstQuestionNumber===330" class="font-weight-bold">Brandenburg</h2>
+    <h2 *ngIf="firstQuestionNumber===340" class="font-weight-bold">Bremen</h2>
+    <h2 *ngIf="firstQuestionNumber===350" class="font-weight-bold">Hamburg</h2>
+    <h2 *ngIf="firstQuestionNumber===360" class="font-weight-bold">Hessen</h2>
+    <h2 *ngIf="firstQuestionNumber===370" class="font-weight-bold">Mecklenburg-Vorpommern</h2>
+    <h2 *ngIf="firstQuestionNumber===380" class="font-weight-bold">Niedersachsen</h2>
+    <h2 *ngIf="firstQuestionNumber===390" class="font-weight-bold">Nordrhein-Westfalen</h2>
+    <h2 *ngIf="firstQuestionNumber===400" class="font-weight-bold">Rheinland-Pfalz</h2>
+    <h2 *ngIf="firstQuestionNumber===410" class="font-weight-bold">Saarland</h2>
+    <h2 *ngIf="firstQuestionNumber===420" class="font-weight-bold">Sachsen</h2>
+    <h2 *ngIf="firstQuestionNumber===430" class="font-weight-bold">Sachsen-Anhalt</h2>
+    <h2 *ngIf="firstQuestionNumber===440" class="font-weight-bold">Schleswig-Holstein</h2>
+    <h2 *ngIf="firstQuestionNumber===450" class="font-weight-bold">Thüringen</h2>
+    <br><br>
+</div>
+
+<div>
+    <nav *ngIf="firstQuestionNumber&#60;300" class="navbar-expand-sm" aria-label="fragen300">
+        <br />
+        <ul class="pagination justify-content-center">
+            <li *ngIf="firstQuestionNumber==0" class="page-item active"><a class="page-link" (click)="getQuestions(0)">1</a></li>
+            <li *ngIf="firstQuestionNumber!=0" class="page-item"><a class="page-link" (click)="getQuestions(0)">1</a></li>
+            <li *ngIf="firstQuestionNumber==30" class="page-item active"><a class="page-link" (click)="getQuestions(30)">2</a></li>
+            <li *ngIf="firstQuestionNumber!=30" class="page-item"><a class="page-link" (click)="getQuestions(30)">2</a></li>
+            <li *ngIf="firstQuestionNumber==60" class="page-item active"><a class="page-link" (click)="getQuestions(60)">3</a></li>
+            <li *ngIf="firstQuestionNumber!=60" class="page-item"><a class="page-link" (click)="getQuestions(60)">3</a></li>
+            <li *ngIf="firstQuestionNumber==90" class="page-item active"><a class="page-link" (click)="getQuestions(90)">4</a></li>
+            <li *ngIf="firstQuestionNumber!=90" class="page-item "><a class="page-link" (click)="getQuestions(90)">4</a></li>
+            <li *ngIf="firstQuestionNumber==120" class="page-item active"><a class="page-link" (click)="getQuestions(120)">5</a></li>
+            <li *ngIf="firstQuestionNumber!=120" class="page-item"><a class="page-link" (click)="getQuestions(120)">5</a></li>
+            <li *ngIf="firstQuestionNumber==150" class="page-item active"><a class="page-link" (click)="getQuestions(150)">6</a></li>
+            <li *ngIf="firstQuestionNumber!=150" class="page-item"><a class="page-link" (click)="getQuestions(150)">6</a></li>
+            <li *ngIf="firstQuestionNumber==180" class="page-item active"><a class="page-link" (click)="getQuestions(180)">7</a></li>
+            <li *ngIf="firstQuestionNumber!=180" class="page-item"><a class="page-link" (click)="getQuestions(180)">7</a></li>
+            <li *ngIf="firstQuestionNumber==210" class="page-item active"><a class="page-link" (click)="getQuestions(210)">8</a></li>
+            <li *ngIf="firstQuestionNumber!=210" class="page-item"><a class="page-link" (click)="getQuestions(210)">8</a></li>
+            <li *ngIf="firstQuestionNumber==240" class="page-item active"><a class="page-link" (click)="getQuestions(240)">9</a></li>
+            <li *ngIf="firstQuestionNumber!=240" class="page-item"><a class="page-link" (click)="getQuestions(240)">9</a></li>
+            <li *ngIf="firstQuestionNumber==270" class="page-item active"><a class="page-link" (click)="getQuestions(270)">10 </a></li>
+            <li *ngIf="firstQuestionNumber!=270" class="page-item"><a class="page-link" (click)="getQuestions(270)">10 </a></li>
+        </ul><br /><br />
+    </nav>
+</div>
+
+<div *ngFor="let question of questions">
+    <ul class="list-group">
+        <li class="list-group-item font-weight-bold">{{question.number}}. {{question.quest}} ({{question.thema}})</li>
+        <li class="list-group-item" [ngClass]="{true : question.trueAnswer==='A'}">A. {{question.answerA}}</li>
+        <li class="list-group-item" [ngClass]="{true : question.trueAnswer==='B'}">B. {{question.answerB}}</li>
+        <li class="list-group-item" [ngClass]="{true : question.trueAnswer==='C'}">C. {{question.answerC}}</li>
+        <li class="list-group-item" [ngClass]="{true : question.trueAnswer==='D'}">D. {{question.answerD}}</li>
+    </ul>
+    <div class="text-center">
+        <img
+            *ngIf="question.hasPhoto"
+            class="img-responsive"
+            src="assets/images/{{question.number}}.png"
+            style="width: 450px; height: 270px">
+    </div><hr>
+</div>

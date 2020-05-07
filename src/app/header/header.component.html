@@ -1,0 +1,57 @@
+<div class="container fixed-top">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <button type="button" class="btn btn-dark font-weight-bold" (click)="onSelect(-1)">Leben In Deutschland</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="nav justify-content-end navbar-nav ">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary" (click)="onSelect(33)">Prüfung</button>
+          <button type="button" class="btn btn-danger" (click)="onSelect(0)">Fragen</button>
+          <button type="button" class="btn btn-warning" (click)="onSelect(-2)">Bundesländer</button>
+        </div>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="showBundeslandMenu===-1">
+  <br />
+  <h4>Leben in Deutschland online</h4><br />
+  <p>Willkommen bei der Online-Lernplattform für den Test Leben in Deutschland! Hier können Sie kostenlos
+    und unverbindlich testen, ob Sie den Test bestehen würden.</p><br />
+  <h5>Den Test Leben in Deutschland jetzt machen</h5>
+  <p>Im Test kommen Fragen für Ihr Bundesland vor. Bitte wählen Sie Ihr Bundesland aus:</p><br />
+  <div class="btn-group-toggle text-center">
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSelect(0)">Fragen</button>
+    <button type="button" class="btn btn-success btn-lg btn-block" (click)="onSelect(33)">Prüfung</button>
+  </div>
+</div>
+
+<div *ngIf="showBundeslandMenu===-2" class="btn-group-toggle text-center">
+  <br><br><br>
+  <h3 class="text-center">Wählen Sie ein Land für die Fragen von Bundesland aus</h3><br>
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(300)">Baden-Württemberg</button>
+  <button class="btn btn-success btn-lg" role="button" (click)="onSelect(310)">Bayern</button>
+  <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(320)">Berlin</button>
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(330)">Brandenburg</button>
+  <br /><br /><br />
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(340)">Bremen</button>
+  <button class="btn btn-secondary btn-lg" role="button" (click)="onSelect(350)">Hamburg</button>
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(360)">Hessen</button>
+  <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(370)">Mecklenburg-Vorpommern</button>
+  <br /><br /><br />
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(380)">Niedersachsen</button>
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(390)">Nordrhein-Westfalen</button>
+  <button class="btn btn-secondary btn-lg" role="button" (click)="onSelect(400)">Rheinland-Pfalz</button>
+  <button class="btn btn-success btn-lg" role="button" (click)="onSelect(410)">Saarland</button>
+  <br /><br /><br />
+  <button class="btn btn-success btn-lg" role="button" (click)="onSelect(420)">Sachsen</button>
+  <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(430)">Sachsen-Anhalt</button>
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(440)">Schleswig-Holstein</button>
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(450)">Thüringen</button>
+</div>
