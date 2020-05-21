@@ -110,6 +110,6 @@ export class ExamComponent implements OnInit, OnDestroy {
         this.questions[i].hasPhoto ));
         i++;
     }
-
+    window.scrollTo(0,0);
   }
 }
