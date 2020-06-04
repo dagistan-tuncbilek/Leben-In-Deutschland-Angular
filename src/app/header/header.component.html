@@ -20,11 +20,11 @@
 </div>
 
 <div *ngIf="showBundeslandMenu===-1">
-  <br />
-  <h4>Leben in Deutschland online</h4><br />
+  <br/><br/><br/>
+  <h4 class="font-weight-bold">Leben in Deutschland online</h4><br />
   <p>Willkommen bei der Online-Lernplattform für den Test Leben in Deutschland! Hier können Sie kostenlos
     und unverbindlich testen, ob Sie den Test bestehen würden.</p><br />
-  <h5>Den Test Leben in Deutschland jetzt machen</h5>
+  <h5 class="font-weight-bold">Den Test Leben in Deutschland jetzt machen</h5>
   <p>Im Test kommen Fragen für Ihr Bundesland vor. Bitte wählen Sie Ihr Bundesland aus:</p><br />
   <div class="btn-group-toggle text-center">
     <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onSelect(0)">Fragen</button>
@@ -34,7 +34,7 @@
 
 <div *ngIf="showBundeslandMenu===-2" class="btn-group-toggle text-center">
   <br><br><br>
-  <h3 class="text-center">Wählen Sie ein Land für die Fragen von Bundesland aus</h3><br>
+  <h3 class="text-center font-weight-bold">Wählen Sie ein Land für die Fragen von Bundesland aus</h3><br>
   <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(300)">Baden-Württemberg</button>
   <button class="btn btn-success btn-lg" role="button" (click)="onSelect(310)">Bayern</button>
   <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(320)">Berlin</button>

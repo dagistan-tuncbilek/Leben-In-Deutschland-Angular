@@ -2,7 +2,7 @@
 <div *ngIf="!showAnswers" >
   <form *ngIf="firstQuestionNumber>=300" (ngSubmit)="onSubmit()" #f="ngForm">
     <br><br>
-    <h2 class="text-center">Leben In Deutschland Test</h2><br>
+    <h2 class="text-center font-weight-bold">Leben In Deutschland Test</h2><br>
     <div *ngFor="let question of questions; let i=index">
       <ul class="list-group">
         <li class="list-group-item font-weight-bold">{{i+1}}. {{question.quest}} ({{question.thema}})</li>
@@ -59,7 +59,7 @@
 </div>
 
 <div *ngIf="firstQuestionNumber&#60;300" class="btn-group-toggle text-center"><br>
-  <h3 class="text-center">Wählen Sie ein Land für die Fragen den Test aus</h3><br>
+  <h3 class="text-center font-weight-bold">Wählen Sie ein Land für die Fragen den Test aus</h3><br>
   <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(300)">Baden-Württemberg</button>
   <button class="btn btn-success btn-lg" role="button" (click)="onSelect(310)">Bayern</button>
   <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(320)">Berlin</button>
