@@ -1,0 +1,82 @@
+<br><br>
+<div *ngIf="!showAnswers" >
+  <form *ngIf="firstQuestionNumber>=300" (ngSubmit)="onSubmit()" #f="ngForm">
+    <br><br>
+    <h2 class="text-center font-weight-bold">Leben In Deutschland Test</h2><br>
+    <div *ngFor="let question of questions; let i=index">
+      <ul class="list-group">
+        <li class="list-group-item font-weight-bold">{{i+1}}. {{question.quest}} ({{question.thema}})</li>
+        <li class="list-group-item "><div class="form-check" >
+          <input class="form-check-input" type="radio" id="A{{i}}" value="A" ngModel name="answer{{i}}">
+          <label class="form-check-label"  for="A{{i}}"> A. {{question.answerA}}</label>
+        </div></li>
+        <li class="list-group-item"><div class="form-check">
+          <input class="form-check-input" type="radio" id="B{{i}}" value="B" ngModel name="answer{{i}}">
+          <label class="form-check-label" for="B{{i}}"> B. {{question.answerB}}</label>
+        </div></li>
+        <li class="list-group-item"><div class="form-check">
+          <input class="form-check-input" type="radio" id="C{{i}}" value="C" ngModel name="answer{{i}}">
+          <label class="form-check-label" for="C{{i}}"> C. {{question.answerC}}</label>
+        </div></li>
+        <li class="list-group-item"><div class="form-check">
+          <input class="form-check-input" type="radio" id="D{{i}}" value="D" ngModel name="answer{{i}}">
+          <label class="form-check-label" for="D{{i}}"> D. {{question.answerD}}</label>
+        </div></li>
+      </ul>
+      <div class="text-center">
+        <img *ngIf="question.hasPhoto" class="img-responsive" src="assets/images/{{question.number}}.png"
+          style="width: 450px; height: 270px">
+      </div><br><br>
+    </div>
+    <input type="submit" class="btn btn-success btn-lg btn-block" value="Submit"><br><br>
+  </form>
+</div>
+
+<div *ngIf="showAnswers">
+  <br><br>
+			<h2 class="text-center">TESTERGEBNIS</h2><br>
+      <ul class="list-group list-group-horizontal justify-content-center">
+        <li class="list-group-item list-group-item-success font-weight-bold">Richtige Antwort : {{totalTrueAnswers}}</li>
+        <li class="list-group-item list-group-item-warning font-weight-bold">Falsche Antwort : {{totalFalseAnswers}}</li>
+        <li class="list-group-item font-weight-bold">Leere Antwort : {{totalEmptyAnswers}}</li>
+      </ul>
+      <div class="text-left"><button class="btn btn-primary" role="button" (click)="newTest()">Neu Test</button></div>
+      <br><br><br>
+  <div *ngFor="let answer of answers let i = index">
+    <ul class="list-group">
+      <li class="list-group-item font-weight-bold">{{i+1}}. {{answer.quest}} ({{answer.thema}})</li>
+      <li class="list-group-item {{answer.styleA}}">A. {{answer.answerA}}</li>
+      <li class="list-group-item {{answer.styleB}}">B. {{answer.answerB}}</li>
+      <li class="list-group-item {{answer.styleC}}">C. {{answer.answerC}}</li>
+      <li class="list-group-item {{answer.styleD}}">D. {{answer.answerD}}</li>
+    </ul>
+    <div class="text-center">
+      <img *ngIf="answer.hasPhoto" class="img-responsive" src="assets/images/{{answer.number}}.png"
+        style="width: 450px; height: 270px">
+    </div><br><br>
+  </div>
+  <div class="text-left"><button class="btn btn-primary" role="button" (click)="newTest()">Neu Test</button></div>
+</div>
+
+<div *ngIf="firstQuestionNumber&#60;300" class="btn-group-toggle text-center"><br>
+  <h3 class="text-center font-weight-bold">Wählen Sie ein Land für die Fragen den Test aus</h3><br>
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(300)">Baden-Württemberg</button>
+  <button class="btn btn-success btn-lg" role="button" (click)="onSelect(310)">Bayern</button>
+  <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(320)">Berlin</button>
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(330)">Brandenburg</button>
+  <br /><br /><br />
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(340)">Bremen</button>
+  <button class="btn btn-secondary btn-lg" role="button" (click)="onSelect(350)">Hamburg</button>
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(360)">Hessen</button>
+  <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(370)">Mecklenburg-Vorpommern</button>
+  <br /><br /><br />
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(380)">Niedersachsen</button>
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(390)">Nordrhein-Westfalen</button>
+  <button class="btn btn-secondary btn-lg" role="button" (click)="onSelect(400)">Rheinland-Pfalz</button>
+  <button class="btn btn-success btn-lg" role="button" (click)="onSelect(410)">Saarland</button>
+  <br /><br /><br />
+  <button class="btn btn-success btn-lg" role="button" (click)="onSelect(420)">Sachsen</button>
+  <button class="btn btn-warning btn-lg" role="button" (click)="onSelect(430)">Sachsen-Anhalt</button>
+  <button class="btn btn-danger btn-lg" role="button" (click)="onSelect(440)">Schleswig-Holstein</button>
+  <button class="btn btn-primary btn-lg" role="button" (click)="onSelect(450)">Thüringen</button>
+</div>

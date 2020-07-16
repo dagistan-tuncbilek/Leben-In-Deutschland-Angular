@@ -1,0 +1,15 @@
+.true{
+    background-color: lightgreen;
+}
+
+.false{
+    background-color: lightsalmon;
+}
+
+.empty{
+    background-color: lightgray;
+}
+
+.selected{
+    background-color: lightgreen;
+}

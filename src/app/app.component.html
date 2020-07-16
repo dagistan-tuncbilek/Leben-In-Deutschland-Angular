@@ -1,0 +1,5 @@
+<div class="container">
+    <app-header (getQuestionNumber)=checkNumber($event)></app-header>       
+    <app-questions *ngIf="showQuestions" [firstQuestionNumber]="firstQuestionNumber"></app-questions>     
+    <app-exam *ngIf="showExam" [firstQuestionNumber]="firstQuestionNumber"></app-exam>
+</div>
